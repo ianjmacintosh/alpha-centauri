@@ -3,15 +3,16 @@
 ## Overview
 
 This is a template project that uses:
-* TypeScript
-* React
-* Vite (with Cloudflare plugin)
-* Vitest
-* Playwright
-* ESLint
-* Prettier
-* GitHub Actions
-* Wrangler
+
+- TypeScript
+- React
+- Vite (with Cloudflare plugin)
+- Vitest
+- Playwright
+- ESLint
+- Prettier
+- GitHub Actions
+- Wrangler
 
 ## Development
 
