@@ -16,20 +16,47 @@ This project is designed as a starting point for Vite projects hosted on Cloudfl
 
 Your quick start steps will be split up logically by platform concern:
 
+- GitHub
 - Cloudflare
+- More GitHub setup
 - Application code
 
-## Quick Start: Cloudflare Portion
+## Quick Start: GitHub
+
+1. Create a new repository
+  - Pick a name
+  - Start with a template: `alpha-centauri`
+  - Do not include all branches
+
+## Quick Start: Cloudflare
 
 1. Create a new Cloudflare "Workers & Pages" Application ([details](#create-a-new-cloudflare-application))
+2. Hook up to your custom domain
 2. Optional: If you bought a domain for this, point WWW to apex ([details](#point-www-to-apex))
 3. Disable web analytics ([details](#disable-web-analytics))
 4. Point HTTP to HTTPS ([details](#point-http-to-https))
 5. Create preview environments for PR's ([details](#create-preview-environments))
 
+
 ### Create a New Cloudflare Application
 
-Write something. Anything. Read it when using it. Edit these instructions to make them better before moving onto the next step.
+In the Cloudflare web UI:
+
+- Build > Compute > Workers & Pages
+- Create Application
+- Continue with GitHub
+- Select your repository you just created
+- Set up your application
+  - Ensure "Builds for non-production branches" is checked
+  - Advanced: Create new build API token
+- Ensure the app loads
+
+### Hook up your custom domain
+
+In your new application's "Domains" tab:
+- Under "Custom Domains and Routes", click "+ Add Domain"
+- Add your domain
+
 
 ### Point WWW to apex
 
@@ -47,8 +74,17 @@ Write something. Anything. Read it when using it. Edit these instructions to mak
 
 Write something. Anything. Read it when using it. Edit these instructions to make them better before moving onto the next step.
 
+### Set Default Merge Strategy to "Squash & Merge"
+
+You'll have to do this manually when you merge your first PR, but there may be a GitHub config file?
+
+## Quick Start: More GitHub Setup
+
+1. Set default merge strategy to "Squash & Merge"
+
 ## Quick Start: Application Code
 
+1. Find all `text-alpha-centauri` and replace with your application name
 1. Get to "Hello World" deployed; Cloudflare setup, GitHub setup, CI, dev container
 2. Style guide created
 3. Pick fonts: 1 heading font, 1 body text font
