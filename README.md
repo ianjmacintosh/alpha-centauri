@@ -92,6 +92,9 @@ You'll have to do this manually when you merge your first PR, but there may be a
 
 1. Prepare to work in a dev container; probably following instructions from [my article](https://www.ianjmacintosh.com/articles/make-a-dev-container/).
 2. npm install
+3. Run `claude` and authenticate
+4. Finish setting up Matt Pocock's skills
+  - In Claude CLI, run: `/setup-matt-pocock-skills`
 3. Find all `text-alpha-centauri` and replace with your application name
 4. Open a Pull Request and ensure tests pass
 5. Merge your change (set default merge strategy to "Squash & Merge")
