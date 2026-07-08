@@ -15,6 +15,7 @@ This project is designed as a starting point for Vite projects hosted on Cloudfl
 ## Quick Start
 
 Your quick start steps will be split up logically by platform concern:
+
 - Cloudflare
 - Application code
 
