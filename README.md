@@ -24,19 +24,19 @@ Your quick start steps will be split up logically by platform concern:
 ## Quick Start: GitHub
 
 1. Create a new repository
-  - Pick a name
-  - Start with a template: `alpha-centauri`
-  - Do not include all branches
+
+- Pick a name
+- Start with a template: `alpha-centauri`
+- Do not include all branches
 
 ## Quick Start: Cloudflare
 
 1. Create a new Cloudflare "Workers & Pages" Application ([details](#create-a-new-cloudflare-application))
 2. Hook up to your custom domain ([details](#hook-up-your-custom-domain))
-2. Optional: If you bought a domain for this, point WWW to apex ([details](#point-www-to-apex))
-3. Disable web analytics ([details](#disable-web-analytics))
-4. Point HTTP to HTTPS ([details](#point-http-to-https))
-5. Create preview environments for PR's ([details](#create-preview-environments))
-
+3. Optional: If you bought a domain for this, point WWW to apex ([details](#point-www-to-apex))
+4. Disable web analytics ([details](#disable-web-analytics))
+5. Point HTTP to HTTPS ([details](#point-http-to-https))
+6. Create preview environments for PR's ([details](#create-preview-environments))
 
 ### Create a New Cloudflare Application
 
@@ -54,17 +54,19 @@ In the Cloudflare web UI:
 ### Hook up your custom domain
 
 In your new application's "Domains" tab:
+
 - Under "Custom Domains and Routes", click "+ Add Domain"
 - Add your domain
 
-
 ### Point WWW to apex
 
-Write something. Anything. Read it when using it. Edit these instructions to make them better before moving onto the next step.
+This step is optional and only makes sense if you bought a domain name.
 
 ### Disable web analytics
 
-Write something. Anything. Read it when using it. Edit these instructions to make them better before moving onto the next step.
+Follow the instructions in [my article](https://www.ianjmacintosh.com/articles/disabling-cloudflare-web-analytics/).
+
+If you are running in a subdomain on a domain where this has already been done, you don't need to do it again.
 
 ### Point HTTP to HTTPS
 
@@ -86,11 +88,11 @@ You'll have to do this manually when you merge your first PR, but there may be a
 
 1. Find all `text-alpha-centauri` and replace with your application name
 1. Get to "Hello World" deployed; Cloudflare setup, GitHub setup, CI, dev container
-2. Style guide created
-3. Pick fonts: 1 heading font, 1 body text font
-4. Pick color scheme relying on one of the main four brands
-5. Define primitive design elements like buttons, links, headings
-6. If a motif arises, use it
+1. Style guide created
+1. Pick fonts: 1 heading font, 1 body text font
+1. Pick color scheme relying on one of the main four brands
+1. Define primitive design elements like buttons, links, headings
+1. If a motif arises, use it
 
 ## Development
 
