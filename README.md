@@ -30,6 +30,7 @@ Your quick start steps will be split up logically by platform concern:
 - Do not include all branches
 
 2. Grant repository permission to the Cloudflare's GitHub extension
+
 - Go to user settings
 - Extensions
 - Cloudflare Workers and Pages
@@ -92,15 +93,15 @@ You'll have to do this manually when you merge your first PR, but there may be a
 1. Prepare to work in a dev container; probably following instructions from [my article](https://www.ianjmacintosh.com/articles/make-a-dev-container/).
 2. npm install
 3. Find all `text-alpha-centauri` and replace with your application name
-2. Open a Pull Request and ensure tests pass
-3. Merge your change (set default merge strategy to "Squash & Merge")
+4. Open a Pull Request and ensure tests pass
+5. Merge your change (set default merge strategy to "Squash & Merge")
 
-1. Get to "Hello World" deployed; Cloudflare setup, GitHub setup, CI, dev container
-1. Style guide created
-1. Pick fonts: 1 heading font, 1 body text font
-1. Pick color scheme relying on one of the main four brands
-1. Define primitive design elements like buttons, links, headings
-1. If a motif arises, use it
+6. Get to "Hello World" deployed; Cloudflare setup, GitHub setup, CI, dev container
+7. Style guide created
+8. Pick fonts: 1 heading font, 1 body text font
+9. Pick color scheme relying on one of the main four brands
+10. Define primitive design elements like buttons, links, headings
+11. If a motif arises, use it
 
 ## Development
 
