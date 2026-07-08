@@ -31,7 +31,7 @@ Your quick start steps will be split up logically by platform concern:
 ## Quick Start: Cloudflare
 
 1. Create a new Cloudflare "Workers & Pages" Application ([details](#create-a-new-cloudflare-application))
-2. Hook up to your custom domain
+2. Hook up to your custom domain ([details](#hook-up-your-custom-domain))
 2. Optional: If you bought a domain for this, point WWW to apex ([details](#point-www-to-apex))
 3. Disable web analytics ([details](#disable-web-analytics))
 4. Point HTTP to HTTPS ([details](#point-http-to-https))
