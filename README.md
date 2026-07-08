@@ -37,6 +37,11 @@ Your quick start steps will be split up logically by platform concern:
 - Repository access > Only select repositories > Pick your new repo
 - Save
 
+3. Block PR's from random people
+
+- In your repo: Settings
+- Features > Pull requests > Pull request permissions "Creation allowed by: Collaborators only"
+
 ## Quick Start: Cloudflare
 
 1. Create a new Cloudflare "Workers & Pages" Application ([details](#create-a-new-cloudflare-application))
@@ -94,7 +99,9 @@ You'll have to do this manually when you merge your first PR, but there may be a
 2. npm install
 3. Run `claude` and authenticate
 4. Finish setting up Matt Pocock's skills
-  - In Claude CLI, run: `/setup-matt-pocock-skills`
+
+- In Claude CLI, run: `/setup-matt-pocock-skills`
+
 3. Find all `text-alpha-centauri` and replace with your application name
 4. Open a Pull Request and ensure tests pass
 5. Merge your change (set default merge strategy to "Squash & Merge")
