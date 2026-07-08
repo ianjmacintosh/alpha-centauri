@@ -29,6 +29,13 @@ Your quick start steps will be split up logically by platform concern:
 - Start with a template: `alpha-centauri`
 - Do not include all branches
 
+2. Grant repository permission to the Cloudflare's GitHub extension
+- Go to user settings
+- Extensions
+- Cloudflare Workers and Pages
+- Repository access > Only select repositories > Pick your new repo
+- Save
+
 ## Quick Start: Cloudflare
 
 1. Create a new Cloudflare "Workers & Pages" Application ([details](#create-a-new-cloudflare-application))
@@ -80,13 +87,14 @@ Write something. Anything. Read it when using it. Edit these instructions to mak
 
 You'll have to do this manually when you merge your first PR, but there may be a GitHub config file?
 
-## Quick Start: More GitHub Setup
-
-1. Set default merge strategy to "Squash & Merge"
-
 ## Quick Start: Application Code
 
-1. Find all `text-alpha-centauri` and replace with your application name
+1. Prepare to work in a dev container; probably following instructions from [my article](https://www.ianjmacintosh.com/articles/make-a-dev-container/).
+2. npm install
+3. Find all `text-alpha-centauri` and replace with your application name
+2. Open a Pull Request and ensure tests pass
+3. Merge your change (set default merge strategy to "Squash & Merge")
+
 1. Get to "Hello World" deployed; Cloudflare setup, GitHub setup, CI, dev container
 1. Style guide created
 1. Pick fonts: 1 heading font, 1 body text font
