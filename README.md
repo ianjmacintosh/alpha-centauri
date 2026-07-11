@@ -103,6 +103,8 @@ You'll have to do this manually when you merge your first PR, but there may be a
 - In Claude CLI, run: `/setup-matt-pocock-skills`
 
 3. Find all `text-alpha-centauri` and replace with your application name
+4. Update `src/index.html` metadata/OpenGraph data with better shareables
+5. Add analytics using Simple Analytics
 4. Open a Pull Request and ensure tests pass
 5. Merge your change (set default merge strategy to "Squash & Merge")
 
