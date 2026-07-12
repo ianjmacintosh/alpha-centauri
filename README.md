@@ -105,15 +105,15 @@ You'll have to do this manually when you merge your first PR, but there may be a
 3. Find all `text-alpha-centauri` and replace with your application name
 4. Update `src/index.html` metadata/OpenGraph data with better shareables
 5. Add analytics using Simple Analytics
-4. Open a Pull Request and ensure tests pass
-5. Merge your change (set default merge strategy to "Squash & Merge")
+6. Open a Pull Request and ensure tests pass
+7. Merge your change (set default merge strategy to "Squash & Merge")
 
-6. Get to "Hello World" deployed; Cloudflare setup, GitHub setup, CI, dev container
-7. Style guide created
-8. Pick fonts: 1 heading font, 1 body text font
-9. Pick color scheme relying on one of the main four brands
-10. Define primitive design elements like buttons, links, headings
-11. If a motif arises, use it
+8. Get to "Hello World" deployed; Cloudflare setup, GitHub setup, CI, dev container
+9. Style guide created
+10. Pick fonts: 1 heading font, 1 body text font
+11. Pick color scheme relying on one of the main four brands
+12. Define primitive design elements like buttons, links, headings
+13. If a motif arises, use it
 
 ## Development
 
