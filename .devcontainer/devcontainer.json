@@ -2,36 +2,52 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
   "name": "Node.js & TypeScript",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
-  "postCreateCommand": "npm install -g @anthropic-ai/claude-code",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-extra/features/tmux-apt-get:1": {},
+    "ghcr.io/postfinance/devcontainer-features/playwright-deps:1.0.0": {
+      "installChromiumDeps": true
+    }
+  },
+  "runArgs": ["--cap-drop=ALL"],
+  "containerEnv": {
+    // If unset, tmux (and other shell-spawning tools) fall back to a dumb /bin/sh
+    "SHELL": "/bin/bash",
+    // If a user lands in /bin/sh somehow, warn them. dash uses $ENV for init scripts
+    "ENV": "/etc/dash-warning.sh"
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "yarn install",
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
   // Configure tool-specific properties.
+  // Store downloaded browsers in the workspace checkout (bind-mounted, so it
+  // inherits the same ownership as node_modules/.git) rather than in
+  // ~/.cache, which the playwright-deps feature otherwise clears on rebuild
+  // and which a root-owned Docker volume couldn't fix without sudo.
+  // arm64: point miniflare at Playwright's Chromium instead of downloading x86-64 Chrome-for-Testing
+  // Update the version segment (chromium-NNNN) when Playwright is upgraded
+  "remoteEnv": {
+    "PLAYWRIGHT_BROWSERS_PATH": "/workspaces/.ms-playwright-cache",
+    "MINIFLARE_CHROME_EXECUTABLE": "/workspaces/.ms-playwright-cache/chromium-1208/chrome-linux/chrome"
+  },
   "customizations": {
     "vscode": {
       "extensions": ["bierner.markdown-mermaid", "esbenp.prettier-vscode"],
       "settings": {
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "[javascript]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "[typescript]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "[json]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-        }
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
       }
     }
-  }
+  },
+  // Login as "node" so that:
+  // - We keep file-ownership the same as when the files were created
+  // - We pick up the fancy prompt the base image already defines for non-root users
+  "containerUser": "node"
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
 }
