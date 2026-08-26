@@ -20,8 +20,7 @@ Your quick start steps will be split up logically by platform concern:
 
 - GitHub
 - Cloudflare
-- More GitHub setup
-- Application code
+- Application Code
 
 ## Quick Start: GitHub
 
@@ -115,7 +114,7 @@ You'll have to do this manually when you merge your first PR, but there may be a
 6. Verify Matt Pocock's skills are installed. In Claude, try `/grilling`
 7. Find all `text-alpha-centauri` and replace with your application name
 8. Update `src/index.html` metadata/OpenGraph data with better shareables
-9. Add analytics using Simple Analytics
+9. Optional: Add analytics using Simple Analytics
 10. Open a Pull Request and ensure tests pass
 11. Merge your change (set default merge strategy to "Squash & Merge")
 
@@ -128,16 +127,24 @@ You'll have to do this manually when you merge your first PR, but there may be a
 
 ## Development
 
-### Start a dev server
+### Dev Container Basics
 
-```bash
-npm run dev
+Get the ID of your current container (run within your dev container):
+
+```sh
+cat /etc/hostname
 ```
 
-### Build the app
+Get the ID of all containers (run on your container host):
 
-```bash
-npm run build
+```sh
+docker ps
+```
+
+Open a terminal session from your local system to your dev container:
+
+```sh
+docker exec -it <container_id> bash
 ```
 
 ## Deployment
