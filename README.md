@@ -1,16 +1,18 @@
 # Alpha Centauri
 
-This project is designed as a starting point for Vite projects hosted on Cloudflare. This is a template project that uses:
+This project is designed as a starting point for Vite projects hosted on Cloudflare
 
-- TypeScript
-- React
-- Vite (with Cloudflare plugin)
-- Vitest
-- Playwright
-- ESLint
-- Prettier
-- GitHub Actions
-- Wrangler
+## Benefits
+
+- Dev container immediately ready to build and deploy anywhere; all your project's stuff isolated from your personal system
+- React with TypeScript immediately available
+- Vite already configured with Cloudflare plugin
+- HMR dev server running in a container, reachable from the container's host machine
+- Instantly ready for end-to-end testing (Playwright), Chrome already installed
+- Formatting, linting, and type checking all available locally and baked into GitHub Actions for all new pull requests
+- Automatic preview environments deployed via Cloudflare
+
+> **Take notes as you go through these steps. When you complete the steps, you can return to this repo (ianjmacintosh/alpha-centauri) to smooth out those rough edges. But do that later. Right now, build something great.**
 
 ## Quick Start
 
