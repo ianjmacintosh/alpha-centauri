@@ -25,21 +25,28 @@ Your quick start steps will be split up logically by platform concern:
 
 ## Quick Start: GitHub
 
-1. Create a new repository
+### Create a new repository
 
 - Pick a name
 - Start with a template: `alpha-centauri`
 - Do not include all branches
 
-2. Grant repository permission to the Cloudflare's GitHub extension
+### Update GitHub extension permission
 
-- Go to user settings
-- Extensions
-- Cloudflare Workers and Pages
-- Repository access > Only select repositories > Pick your new repo
-- Save
+In your GitHub user settings, you'll find an extension for Cloudflare
 
-3. Block PR's from random people
+**Step-by-Step Instructions**
+
+1. Go to your GitHub [user settings](https://github.com/settings/profile)
+2. [Applications](https://github.com/settings/installations)
+3. Next to "Cloudflare Workers and Pages" click **Configure**
+
+- You may need to authenticate with GitHub with MFA
+
+4. Repository access > Only select repositories > Pick your new repo
+5. Save
+
+### Block PR's from random people
 
 - In your repo: Settings
 - Features > Pull requests > Pull request permissions "Creation allowed by: Collaborators only"
