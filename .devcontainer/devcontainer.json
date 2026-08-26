@@ -14,23 +14,21 @@
     }
   },
   "runArgs": ["--cap-drop=ALL"],
+  // Store Claude Code auth/config in a unique persistent volume
+  "mounts": [
+    "source=${localWorkspaceFolderBasename}-claude-code-auth,target=/home/node/.claude,type=volume"
+  ],
   "containerEnv": {
     // If unset, tmux (and other shell-spawning tools) fall back to a dumb /bin/sh
     "SHELL": "/bin/bash",
     // If a user lands in /bin/sh somehow, warn them. dash uses $ENV for init scripts
     "ENV": "/etc/dash-warning.sh"
   },
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
-  // Use 'postCreateCommand' to run commands after the container is created.
+  // Forward 5173 to access Vite from the container's host
+  "forwardPorts": [5173],
   "postCreateCommand": "bash .devcontainer/post-create.sh",
-  // Configure tool-specific properties.
-  // Store downloaded browsers in the workspace checkout (bind-mounted, so it
-  // inherits the same ownership as node_modules/.git) rather than in
-  // ~/.cache, which the playwright-deps feature otherwise clears on rebuild
-  // and which a root-owned Docker volume couldn't fix without sudo.
-  // arm64: point miniflare at Playwright's Chromium instead of downloading x86-64 Chrome-for-Testing
-  // Update the version segment (chromium-NNNN) when Playwright is upgraded
+  // PLAYWRIGHT_BROWSERS_PATH avoids re-downloading Playwright and its dependencies on every rebuild
+  // MINIFLARE_CHROME_EXECUTABLE points Miniflare to a compatible Chromium build (arm64, not x86)
   "remoteEnv": {
     "PLAYWRIGHT_BROWSERS_PATH": "/workspaces/.ms-playwright-cache",
     "MINIFLARE_CHROME_EXECUTABLE": "/workspaces/.ms-playwright-cache/chromium-1208/chrome-linux/chrome"
