@@ -105,24 +105,26 @@ You'll have to do this manually when you merge your first PR, but there may be a
 ## Quick Start: Application Code
 
 1. Prepare to work in a dev container; probably following instructions from [my article](https://www.ianjmacintosh.com/articles/make-a-dev-container/).
-2. npm install
-3. Run `claude` and authenticate
-4. Finish setting up Matt Pocock's skills
+2. Switch to a new branch named something like "initialize-project": `git checkout -b init-project`
+3. Install dependencies: `npm install`
 
-- In Claude CLI, run: `/setup-matt-pocock-skills`
+- You may get a vulnerability warning after running this command. `npm update` may fix some of these. Commit and push `package-lock.json` if so.
 
-3. Find all `text-alpha-centauri` and replace with your application name
-4. Update `src/index.html` metadata/OpenGraph data with better shareables
-5. Add analytics using Simple Analytics
-6. Open a Pull Request and ensure tests pass
-7. Merge your change (set default merge strategy to "Squash & Merge")
+4. Authenticate with GitHub CLI: `gh auth login` and follow on-screen instructions
+5. Authenticate with Claude: `claude` and follow on-screen instructions
+6. Verify Matt Pocock's skills are installed. In Claude, try `/grilling`
+7. Find all `text-alpha-centauri` and replace with your application name
+8. Update `src/index.html` metadata/OpenGraph data with better shareables
+9. Add analytics using Simple Analytics
+10. Open a Pull Request and ensure tests pass
+11. Merge your change (set default merge strategy to "Squash & Merge")
 
-8. Get to "Hello World" deployed; Cloudflare setup, GitHub setup, CI, dev container
-9. Style guide created
-10. Pick fonts: 1 heading font, 1 body text font
-11. Pick color scheme relying on one of the main four brands
-12. Define primitive design elements like buttons, links, headings
-13. If a motif arises, use it
+12. Get to "Hello World" deployed; Cloudflare setup, GitHub setup, CI, dev container
+13. Style guide created
+14. Pick fonts: 1 heading font, 1 body text font
+15. Pick color scheme relying on one of the main four brands
+16. Define primitive design elements like buttons, links, headings
+17. If a motif arises, use it
 
 ## Development
 
