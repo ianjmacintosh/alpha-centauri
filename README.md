@@ -69,7 +69,6 @@ In the Cloudflare web UI:
 - Select your repository you just created
 - Set up your application
   - Ensure "Builds for non-production branches" is checked
-  - Advanced: Create new build API token
 - Ensure the app loads
 
 ### Hook up your custom domain
@@ -91,11 +90,31 @@ If you are running in a subdomain on a domain where this has already been done, 
 
 ### Point HTTP to HTTPS
 
-Write something. Anything. Read it when using it. Edit these instructions to make them better before moving onto the next step.
+If you are deploying to a subdomain that already redirects to HTTPS, you can ignore this.
+
+If you are deploying to a new Cloudflare domain, from your dashboard:
+
+1. SSL/TLS > Overview
+2. Under "Encryption Mode" choose "Automatic SSL/TLS (recommended)"
+3. Save
 
 ### Create Preview Environments
 
-Write something. Anything. Read it when using it. Edit these instructions to make them better before moving onto the next step.
+In your Cloudflare Workers "Settings" page, scroll down to **Build**
+
+Update the "Branch Control" card so the "Builds for non-production branches" checkbox is checked
+
+Update the "Git repository" card so your repository is selected. This allows Cloudflare to comment on your pull requests with preview environment info
+
+> **DANGER**: By default, your preview environments **may leak sensitive production data**
+>
+> Preview environments automatically bind to production resources (D1 databases, environment vars & secrets)
+>
+> To override this behavior, you will need to define new resources and associate them with a named environment in your `wrangler.jsonc`
+>
+> Then you may update your "Build configuration" card to use a "Version command" such as `npx wrangler versions upload --env staging`
+>
+> Learn more about [Wrangler Environments](https://developers.cloudflare.com/workers/wrangler/environments/)
 
 ### Set Default Merge Strategy to "Squash & Merge"
 
